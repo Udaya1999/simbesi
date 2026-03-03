@@ -65,7 +65,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="footer-bottom">
-        © 2025 Simbesi. All rights reserved.
+        © 2026 Simbesi. All rights reserved.
       </div>
     </footer>
   );
