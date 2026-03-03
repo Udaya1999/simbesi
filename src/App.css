@@ -1,0 +1,10 @@
+.Home {
+  min-height: 100vh;
+  background: linear-gradient(
+    90deg,
+    #071826 0%,
+    #0b2745 40%,
+    #153a6b 100%
+  );
+}
+

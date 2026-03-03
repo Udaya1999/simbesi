@@ -1,0 +1,400 @@
+
+
+
+/* ================= RESET & BASE ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  height: 60px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* THE FIX: Remove max-width or set to 100% to push Logo and Menu to the edges */
+.nav-container {
+  width: 100%;
+  max-width: 100%; 
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 50px; /* Adjust this value to set the distance from the screen edge */
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+/* ================= LOGO ================= */
+.logo-section {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 40px; /* Size based on your screenshot */
+  width: auto;
+  transition: 0.3s ease;
+}
+
+.navbar.scrolled .logo-img {
+  height: 35px;
+}
+
+/* ================= DESKTOP NAVIGATION ================= */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 35px; /* Space between menu items */
+}
+
+.nav li {
+  font-size: 15px;
+  font-weight: 700; /* Bold as per your vision */
+  color: #001233;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav li:hover {
+  color: #2563eb;
+}
+
+/* ================= CONTACT BUTTON ================= */
+.contact-btn {
+  /* Fix Padding: Reduced top/bottom to 8px for a slimmer, neater look */
+  padding: 8px 24px;
+  border-radius: 50px; 
+  
+  /* Text Highlight: Pure white ensures maximum readability */
+  color: #ffffff;
+  
+  /* Clean Background: A vibrant blue pulled from your logo icon */
+  background: #00acc1; 
+  
+  border: none;
+  font-weight: 600;
+  font-size: 14px; /* Slightly smaller font looks cleaner in navbars */
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  
+  /* Adds depth without looking 'muddy' */
+  box-shadow: 0 4px 10px rgba(0, 172, 193, 0.2);
+}
+
+.contact-btn:hover {
+  /* Hover effect: Darkens slightly to provide feedback */
+  background: #008c9e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(0, 172, 193, 0.3);
+}
+/* ================= MEGA MENU (DESKTOP) ================= */
+.mega-trigger {
+  position: static; 
+}
+
+.mega-menu {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #f3f4f6;
+  border-bottom: 3px solid #2563eb;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 999;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.navbar.scrolled .mega-menu {
+  top: 70px;
+}
+
+/* Hover logic for desktop */
+@media (min-width: 901px) {
+  .mega-trigger:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.mega-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 40px;
+}
+
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+
+.mega-column h4 {
+  font-size: 18px;
+  color: #2563eb;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.mega-item {
+  padding: 10px 0;
+  color: #4b5563;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mega-item:hover {
+  color: #111827;
+  padding-left: 5px;
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #111827;
+  transition: 0.3s ease;
+  border-radius: 5px;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+/* ================= MOBILE STYLES (Max 900px) ================= */
+@media (max-width: 900px) {
+  .nav-container {
+    padding: 0 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: #ffffff;
+    padding: 100px 24px 40px;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    display: block; 
+    overflow-y: auto;
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .nav li {
+    width: 100%;
+    padding: 18px 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  /* Mobile Accordion Style */
+  .mega-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: none; 
+    transform: none;
+    border: none;
+    background: #f9fafb;
+    box-shadow: none;
+  }
+
+  .mega-menu.mobile-open {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .mega-wrapper {
+    padding: 20px;
+  }
+
+  .mega-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .contact-btn {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  max-width: 900px;
+  padding: 40px 20px;
+}
+
+.hero-headline {
+  font-size: clamp(32px, 6vw, 64px);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.hero-subheadline {
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: 400;
+  margin-bottom: 35px;
+  opacity: 0.9;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .hero-cta-group {
+    flex-direction: column;
+  }
+}
+
+.btn-primary, .btn-secondary {
+  padding: 16px 36px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #00d4ff);
+  color: white;
+  border: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-primary:hover { transform: scale(1.03); }
+.btn-secondary:hover { background: white; color: #111827; }
+
+/* ================= LINK STYLING ================= */
+
+/* Target all links inside the navigation and mega menu */
+.nav a, 
+.mega-item, 
+.logo-section a {
+  text-decoration: none !important; /* Removes the underline */
+  /* color: inherit;                  Keeps the color you've already defined */
+  display: inline-block;
+}
+
+/* Ensure mega menu links look like the original items */
+.mega-item {
+  display: block;
+  padding: 8px 0;
+  font-weight: 500;
+  color: #4b5563;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+/* Hover effect without the underline returning */
+.mega-item:hover {
+  text-decoration: none;
+  /* color: #101828; */
+  padding-left: 5px;
+}
+
+/* Specific fix for the Logo link to prevent any border or underline */
+.logo-section a {
+  border: none;
+  outline: none;
+}
