@@ -168,9 +168,7 @@ const Websitedev = () => {
           </div>
         </section>
 
-        <footer className="py-4 border-top text-center text-muted small">
-          &copy; 2026 Simbesi Application. All Rights Reserved.
-        </footer>
+      
       </div>
     </HelmetProvider>
   );

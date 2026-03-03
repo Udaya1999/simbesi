@@ -90,34 +90,24 @@ body {
 
 /* ================= CONTACT BUTTON ================= */
 .contact-btn {
-  /* Fix Padding: Reduced top/bottom to 8px for a slimmer, neater look */
-  padding: 8px 24px;
-  border-radius: 50px; 
-  
-  /* Text Highlight: Pure white ensures maximum readability */
-  color: #ffffff;
-  
-  /* Clean Background: A vibrant blue pulled from your logo icon */
-  background: #00acc1; 
-  
+  background: #0046AD !important; /* Brand Blue from your image */
+  color: #ffffff !important;
+  text-decoration: none !important;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-block;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 70, 173, 0.25);
   border: none;
-  font-weight: 600;
-  font-size: 14px; /* Slightly smaller font looks cleaner in navbars */
-  font-family: 'Inter', sans-serif;
   cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  letter-spacing: 0.5px;
-  
-  /* Adds depth without looking 'muddy' */
-  box-shadow: 0 4px 10px rgba(0, 172, 193, 0.2);
 }
 
 .contact-btn:hover {
-  /* Hover effect: Darkens slightly to provide feedback */
-  background: #008c9e;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 15px rgba(0, 172, 193, 0.3);
+  background: #00358a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 70, 173, 0.35);
 }
 /* ================= MEGA MENU (DESKTOP) ================= */
 .mega-trigger {
@@ -352,7 +342,7 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #2563eb, #00d4ff);
+  background: linear-gradient(135deg, #123580, #00d4ff);
   color: white;
   border: none;
 }

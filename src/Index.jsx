@@ -140,7 +140,9 @@ const Index = () => {
                         <h4>On-Demand Mobile App </h4>
                         <div><Link to="./mobiledev" className="mega-item">Mobile App Development</Link></div>
                         <div><Link to="./iosappdev" className="mega-item">IOS APP Development</Link></div>
-                        <div><Link to="./artificialintel" className="mega-item">Blockchain</Link></div>
+                        <div><Link to="./MachineLearning" className="mega-item">Machine Learning</Link></div>
+                        <div><Link to="./ComputerVision" className="mega-item">Computer Vision</Link></div>
+                        <div><Link to="./ConversationalAI" className="mega-item">Conversational AI</Link></div>
                       
                       </div>
                       <div className="mega-column">
@@ -155,7 +157,11 @@ const Index = () => {
                 </div>
               </li>
 
-              <button className="contact-btn"><Link to="./contact" className="mega-item">Contact Us</Link></button>
+              <li className="nav-btn-item">
+              <Link to="/contact" className="contact-btn">
+                Contact Us
+              </Link>
+            </li>
             </ul>
           </nav>
         </div>

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Helmet } from 'react-helmet-async'; // SEO Integration
+import { Helmet } from 'react-helmet-async'; 
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
@@ -33,7 +33,7 @@ const INDUSTRIES = [
 const AndroidAppDev = () => {
     const navigate = useNavigate();
     const handleRedirectToStory2 = () => {
-      navigate("/careers"); // Fixed typo from /carrers
+      navigate("/careers"); 
     };
 
   useEffect(() => {
@@ -41,28 +41,21 @@ const AndroidAppDev = () => {
   }, []);
 
   return (
-    <div className="android-service-page">
-      {/* SEO METADATA SECTION */}
+    <div className="android-service-page brand-bg-dark">
       <Helmet>
         <title>Android App Development Services | SIMBESI</title>
         <meta name="description" content="We help you step into the digital landscape with feature-packed mobile apps. Explore bespoke solutions for Healthcare, Finance, Education, and more." />
-        <meta name="keywords" content="Android app development, mobile application services, custom mobile apps, cross-platform development, SIMBESI mobile solutions" />
-        
-        {/* Open Graph Tags for Social Sharing */}
-        <meta property="og:title" content="Bespoke Android App Development | SIMBESI" />
-        <meta property="og:description" content="Turning your ideas into feature-packed mobile applications with a remarkable brand presence." />
-        <meta property="og:image" content={androidHeroImg} />
       </Helmet>
 
       {/* 1. HERO SECTION */}
-      <section className="hero-dark">
+      <section className="hero-dark-unified">
         <div className="container position-relative">
           <div className="row align-items-center min-vh-100 py-5">
             <div className="col-lg-7" data-aos="fade-right">
-              <h6 className="text-android-green fw-bold tracking-widest text-uppercase mb-3">Mobile App Development</h6>
+              <h6 className="brand-cyan fw-bold tracking-widest text-uppercase mb-3">Mobile App Development</h6>
               <h1 className="display-3 fw-bold text-white mb-4">
                 We WORK on your <span className="text-outline">IDEAS</span> <br /> 
-                to make your <span className="text-android-green">IDEAS WORK</span>
+                to make your <span className="brand-cyan">IDEAS WORK</span>
               </h1>
               <p className="lead text-white-50 pe-lg-5">
                 Join hands with SIMBESI. We help you step into the digital landscape with 
@@ -70,10 +63,9 @@ const AndroidAppDev = () => {
                 remarkable brand presence.
               </p>
               <div className="mt-5 d-flex flex-wrap gap-3">
-                <button className="btn-glow" onClick={handleRedirectToStory2}>
+                <button className="btn-cyan-glow" onClick={handleRedirectToStory2}>
                   Explore Careers
                 </button>
-                {/* <button className="btn-glass">Hire Our Team</button> */}
               </div>
             </div>
             <div className="col-lg-5" data-aos="zoom-in" data-aos-delay="300">
@@ -86,18 +78,18 @@ const AndroidAppDev = () => {
       </section>
 
       {/* 2. PHILOSOPHY SECTION */}
-      <section className="py-5 bg-white">
+      <section className="py-5">
         <div className="container py-5">
           <div className="row g-5 align-items-center">
             <div className="col-lg-6" data-aos="fade-up">
-              <h2 className="fw-bold display-5 mb-4">Solving <span className="text-primary">Indigenous Intricacies</span></h2>
-              <p className="fs-5 text-muted">
+              <h2 className="fw-bold display-5 mb-4 text-white">Solving <span className="brand-cyan">Indigenous Intricacies</span></h2>
+              <p className="fs-5 text-light opacity-75">
                 We understand that below the surface, every business suffers from complexities 
                 that drain operation costs. Lower efficiency and a constant tug of war with 
                 productivity are challenges we tackle personally.
               </p>
-              <div className="highlight-quote border-start border-4 border-primary ps-4 my-4">
-                <p className="fst-italic text-dark fw-medium mb-0">
+              <div className="highlight-quote border-start border-4 border-cyan ps-4 my-4">
+                <p className="fst-italic text-light fw-medium mb-0">
                   "It requires subtle observation and first-hand experience to find solutions 
                   that foster true efficiency."
                 </p>
@@ -105,10 +97,10 @@ const AndroidAppDev = () => {
             </div>
             <div className="col-lg-6" data-aos="fade-left">
               <div className="feature-grid">
-                 <div className="feature-item-pill">Native Solutions</div>
-                 <div className="feature-item-pill">Cross-Platform Specialist</div>
-                 <div className="feature-item-pill">Custom Development Strategies</div>
-                 <div className="feature-item-pill">Bespoke Mobile Solutions</div>
+                 <div className="feature-item-pill-dark">Native Solutions</div>
+                 <div className="feature-item-pill-dark">Cross-Platform Specialist</div>
+                 <div className="feature-item-pill-dark">Custom Development Strategies</div>
+                 <div className="feature-item-pill-dark">Bespoke Mobile Solutions</div>
               </div>
             </div>
           </div>
@@ -116,27 +108,27 @@ const AndroidAppDev = () => {
       </section>
 
       {/* 3. INDUSTRY SOLUTIONS */}
-      <section className="bg-light py-5">
+      <section className="py-5 brand-bg-navy-accent">
         <div className="container py-5">
           <div className="text-center mb-5" data-aos="fade-down">
-            <h2 className="display-6 fw-bold">Proprietary Research for <span className="text-primary">Every Industry</span></h2>
-            <p className="text-muted">Bespoke business solutions that keep you always one step ahead.</p>
+            <h2 className="display-6 fw-bold text-white">Proprietary Research for <span className="brand-cyan">Every Industry</span></h2>
+            <p className="text-light opacity-50">Bespoke business solutions that keep you always one step ahead.</p>
           </div>
 
           <div className="row g-4">
             {INDUSTRIES.map((item, index) => (
               <div key={index} className="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay={index * 100}>
-                <div className="industry-card h-100 shadow-sm overflow-hidden">
+                <div className="industry-card h-100 overflow-hidden border-0">
                   <div className="industry-image-wrapper">
                     <img src={item.img} alt={`SIMBESI ${item.title} solutions`} className="industry-bg-img" />
                     <div className="industry-overlay">
                        <i className={`bi ${item.icon} fs-2 text-white`}></i>
                     </div>
                   </div>
-                  <div className="p-4 bg-white">
-                    <h5 className="fw-bold">{item.title}</h5>
-                    <p className="small text-muted">{item.desc}</p>
-                    <a href="#" className="read-more-link">Read More <i className="bi bi-arrow-right"></i></a>
+                  <div className="p-4 card-bg-navy">
+                    <h5 className="fw-bold text-white mb-2">{item.title}</h5>
+                    <p className="small text-light opacity-75">{item.desc}</p>
+                    <a href="#" className="read-more-link-cyan">Read More <i className="bi bi-arrow-right"></i></a>
                   </div>
                 </div>
               </div>
@@ -146,46 +138,56 @@ const AndroidAppDev = () => {
       </section>
 
       <style>{`
-        .hero-dark { background: #001428; overflow: hidden; position: relative; }
-        .text-android-green { color: #3DDC84; }
-        .text-outline { -webkit-text-stroke: 1px rgba(255,255,255,0.5); color: transparent; }
+        :root {
+          --brand-navy: #001f3f;
+          --brand-cyan: #4bc9e1;
+          --bg-dark: #00040a;      
+          --card-bg: #01162e;      
+        }
+
+        .brand-bg-dark { background-color: var(--bg-dark); min-height: 100vh; overflow-x: hidden; }
+        .brand-bg-navy-accent { background-color: #010a14; }
+        .brand-cyan { color: var(--brand-cyan) !important; }
+        .border-cyan { border-color: var(--brand-cyan) !important; }
+        .card-bg-navy { background-color: var(--card-bg); }
+
+        .hero-dark-unified { background: var(--bg-dark); overflow: hidden; position: relative; }
+        .text-outline { -webkit-text-stroke: 1px rgba(255,255,255,0.3); color: transparent; }
         .tracking-widest { letter-spacing: 0.3em; }
 
-        .btn-glow {
-          background: #3DDC84; color: #001428; border: none; padding: 15px 40px; border-radius: 50px;
+        .btn-cyan-glow {
+          background: var(--brand-cyan); color: var(--brand-navy); border: none; padding: 15px 40px; border-radius: 50px;
           font-weight: 800; text-transform: uppercase; transition: all 0.3s ease;
-          box-shadow: 0 0 20px rgba(61, 220, 132, 0.4);
+          box-shadow: 0 0 20px rgba(75, 201, 225, 0.3);
         }
-        .btn-glow:hover { transform: translateY(-5px); box-shadow: 0 0 35px rgba(61, 220, 132, 0.6); }
+        .btn-cyan-glow:hover { transform: translateY(-5px); box-shadow: 0 0 35px rgba(75, 201, 225, 0.5); color: var(--brand-navy); }
 
-        .btn-glass {
-          background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.2);
-          padding: 15px 40px; border-radius: 50px; backdrop-filter: blur(10px); transition: 0.3s;
-        }
-
-        .industry-card { border-radius: 20px; transition: 0.4s; border: none; }
+        .industry-card { border-radius: 20px; transition: 0.4s; background: var(--card-bg); }
         .industry-image-wrapper { height: 180px; position: relative; overflow: hidden; }
-        .industry-bg-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .industry-bg-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; opacity: 0.8; }
+        
         .industry-overlay {
           position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-          background: rgba(13, 110, 253, 0.6); display: flex; align-items: center; justify-content: center;
+          background: rgba(75, 201, 225, 0.4); display: flex; align-items: center; justify-content: center;
           opacity: 0; transition: 0.3s;
         }
         .industry-card:hover .industry-overlay { opacity: 1; }
-        .industry-card:hover .industry-bg-img { transform: scale(1.1); }
-        .industry-card:hover { transform: translateY(-10px); }
+        .industry-card:hover .industry-bg-img { transform: scale(1.1); opacity: 1; }
+        .industry-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
-        .read-more-link {
-          font-weight: 700; text-decoration: none; color: #0d6efd; font-size: 0.85rem;
+        .read-more-link-cyan {
+          font-weight: 700; text-decoration: none; color: var(--brand-cyan); font-size: 0.85rem;
           transition: gap 0.3s; display: inline-flex; align-items: center; gap: 5px;
         }
-        .read-more-link:hover { gap: 10px; }
+        .read-more-link-cyan:hover { gap: 10px; color: white; }
 
         .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .feature-item-pill {
-          background: #f8f9fa; padding: 20px; border-radius: 15px;
-          font-weight: 700; color: #001428; text-align: center; border: 1px solid #eee;
+        .feature-item-pill-dark {
+          background: var(--card-bg); padding: 20px; border-radius: 15px;
+          font-weight: 700; color: white; text-align: center; border: 1px solid rgba(75, 201, 225, 0.1);
+          transition: 0.3s;
         }
+        .feature-item-pill-dark:hover { border-color: var(--brand-cyan); color: var(--brand-cyan); }
 
         .floating-device { animation: float-y 5s infinite ease-in-out; }
         @keyframes float-y {

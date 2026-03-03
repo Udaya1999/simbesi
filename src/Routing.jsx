@@ -21,6 +21,9 @@ import SoftwareMainSupport from './Services/SoftwareMainSupport';
 import Websitedev from './Services/Websitedev';
 
 import Contact from './Contact/Contact';
+import MachineLearning from "./Services/MachineLearning";
+import ComputerVision from './Services/ComputerVision';
+import ConversationalAI from './Services/ConversationalAI';
 
 // Import other components as you create them
 // import WhoWeAre from './pages/WhoWeAre'; 
@@ -47,8 +50,10 @@ const Routing = () => {
       <Route path="/softwaremainsupport" element={<SoftwareMainSupport />}/>
       <Route path="/websitedev" element={<Websitedev />}/>
       <Route path="/contact" element={<Contact />} />
-      {/* <Route path="/" element={<Home  />} />
-      <Route path="/" element={<Home  />} /> */}
+     <Route path="/MachineLearning" element={<MachineLearning  />} />
+     <Route path="/ComputerVision" element={<ComputerVision />} />
+     <Route path="/ConversationalAI" element={<ConversationalAI />} />
+      
     </Routes>
   );
 };

@@ -44,9 +44,9 @@ const Footer = () => {
           <h4>Services</h4>
           <ul>
             <li > <Link to="./artificialintel">AI Mobile Apps</Link></li>
-            <li><Link to="./argumentreality">Machine Learning</Link></li>
-            <li><Link to="/">Computer Vision</Link></li>
-            <li><Link to="/">Conversational AI</Link></li>
+            <li><Link to="./MachineLearning">Machine Learning</Link></li>
+            <li><Link to="./ComputerVision">Computer Vision</Link></li>
+            <li><Link to="./ConversationalAI">Conversational AI</Link></li>
             
           </ul>
         </div>
