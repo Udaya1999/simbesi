@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Code, Smartphone, Zap, Shield, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import banner2 from "../assets/img/workflow.jpg";
 
 const Websitedev = () => {
   useEffect(() => {
@@ -140,7 +141,13 @@ const Websitedev = () => {
                   <p className="text-center text-white-50 small mb-3">Simbesi Methodology: SDLC</p>
                   
 
-[Image of Software Development Life Cycle (SDLC) diagram]
+                        {/* [Image of Software Development Life Cycle (SDLC) diagram] */}
+                           <img 
+                                          src={banner2} 
+                                          alt="Our Process Diagram" 
+                                          className="img-fluid rounded-4 shadow-sm"
+                                          style={{ filter: "contrast(1.1)" }}
+                                        />
 
                 </div>
               </div>
