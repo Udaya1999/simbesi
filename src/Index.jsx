@@ -72,9 +72,9 @@ const Index = () => {
                         <div><Link to="/testimonials" className="mega-item">Testimonials</Link></div>
                       </div>
                       <div className="mega-column">
-                        <h4>Company</h4>
-                        <div className="mega-item">
-                          <div><Link to="/about">Learn more about our journey & achievements.</Link></div>
+                        {/* <h4>Company</h4> */}
+                        <div >
+                          <div><Link  className="mega-item" to="/about"  >Learn more about our journey & achievements.</Link></div>
                         </div>
                       </div>
                     </div>
@@ -99,20 +99,20 @@ const Index = () => {
                         
                       </div>
                       <div className="mega-column">
-                        <h4>MOBILE APP DEVELOPMENT</h4> 
+                        <h4>Mobile App Development </h4> 
                         <div><Link to="./androidappdev" className="mega-item">Android</Link> </div>
                         <div > <Link to="./iosappdev" className="mega-item">iOS</Link></div>
                         <div > <Link to="./hybridmobiledev" className="mega-item">Cross Platform</Link></div>
                       </div>
                       <div className="mega-column">
-                        <h4>DESIGN</h4>
+                        <h4>Design </h4>
                         <div ><Link to="./mobiledev" className="mega-item">UI / UX</Link></div>
                           <div ><Link  to="./mobiledev" className="mega-item">Prototyping</Link></div>
                             <div ><Link  to="./mobiledev" className="mega-item">Research</Link></div>
                         
                       </div>
                       <div className="mega-column">
-                        <h4>OTHER SERVICES WE OFFER</h4>
+                        <h4>Other Services We Offer </h4>
                         
                         <div><Link to="./hybridmobiledev" className="mega-item">Hybrid Mobile Application</Link></div>
                         <div><Link to="./ipadapplications" className="mega-item">Ipad Application Development</Link></div>
@@ -140,16 +140,17 @@ const Index = () => {
                         <h4>On-Demand Mobile App </h4>
                         <div><Link to="./mobiledev" className="mega-item">Mobile App Development</Link></div>
                         <div><Link to="./iosappdev" className="mega-item">IOS APP Development</Link></div>
-                        <div><Link to="./MachineLearning" className="mega-item">Machine Learning</Link></div>
-                        <div><Link to="./ComputerVision" className="mega-item">Computer Vision</Link></div>
-                        <div><Link to="./ConversationalAI" className="mega-item">Conversational AI</Link></div>
+
                       
                       </div>
                       <div className="mega-column">
                         <h4>Artificial Intelligence Solutions</h4>
                         <div><Link to="./artificialintel" className="mega-item">AI</Link></div>
                         <div><Link to="./argumentreality" className="mega-item">AR / VR</Link></div>
-                        <div><Link to="./artificialintel" className="mega-item">AI</Link></div>
+                        <div><Link to="./MachineLearning" className="mega-item">Machine Learning</Link></div>
+                        <div><Link to="./DataScience" className="mega-item">Data Science</Link></div>
+                        <div><Link to="./ComputerVision" className="mega-item">Computer Vision</Link></div>
+                        <div><Link to="./ConversationalAI" className="mega-item">Conversational AI</Link></div>
                        
                       </div>
                     </div>
@@ -165,11 +166,7 @@ const Index = () => {
             </ul>
           </nav>
         </div>
-      </header>
-
-   
-
-     
+      </header>    
     </>
   );
 };

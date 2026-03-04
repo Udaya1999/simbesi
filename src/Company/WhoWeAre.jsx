@@ -39,21 +39,88 @@ const WhoWeAre = () => {
   }, [tabKeys]);
 
   const tabData = useMemo(() => ({
-    vision: {
-      title: "Our Vision",
-      lead: "Create enduring value for clients whilst being a pioneer in the latest technology.",
-      body: "Our vision supports us as a rock-solid foundation to be a leader in the IT industry and foster a relationship of trust with our clients."
-    },
-    mission: {
-      title: "Our Mission",
-      lead: "To empower businesses through seamless digital integration and innovative software development strategies.",
-      body: "We strive to bridge the gap between complex technology and practical business solutions."
-    },
-    expertise: {
-      title: "Our Expertise",
-      lead: "Highly experienced developers making sure every product meets specific requirements.",
-      body: "From cloud architecture to custom mobile applications, we build with scalability in mind."
-    }
+   vision: {
+        title: "Our Vision",
+        lead:
+          "Create enduring value for clients whilst being a pioneer in the latest technology.",
+        body: (
+          <>
+          <p className="bi  text me-2">
+            We adopt the latest trends and technology in the market to provide
+            cutting-edge solutions. These solutions enable our clients to revamp
+            their performance in the highly competitive market. Our vision
+            supports us as a rock-solid foundation to be a leader in the IT
+            industry and foster a relationship of trust with our clients.
+          </p>
+          <p className="bi  text me-2">
+            Our vision supports us as a rock-solid foundation to be a leader in the IT industry and foster a relationship of trust with our clients. Hard work and perseverance have indeed paid off and we hope to serve our clients in the best possible way and touch lives in a positive way. Our Expert team of highly experienced developers make sure that every custom product we develop meets the clients’ business requirements to the best of its capability. For delivering world-class custom mobile solutions, our ace developers follow latest development technologies.
+            </p></>
+        ),
+      },
+
+      mission: {
+        title: "Our Mission",
+        lead:
+          "To empower businesses through seamless digital integration and innovative software development.",
+        body: (
+          <ul className="list-unstyled">
+            <li className="mb-2">
+              <i className="bi bi-check-circle-fill text-logo-blue me-2"></i>
+              Enduring value for clients
+            </li>
+            <li className="mb-2">
+              <i className="bi bi-check-circle-fill text-logo-blue me-2"></i>
+              Pioneer in the latest technology
+            </li>
+            <li className="mb-2">
+              <i className="bi bi-check-circle-fill text-logo-blue me-2"></i>
+              Fostering relationships of trust
+            </li>
+            <li className="mb-2">
+              <i className="bi bi-check-circle-fill text-logo-blue me-2"></i>
+              Solid team powered by hard work
+            </li>
+            <li className="mb-2">
+              <i className="bi bi-check-circle-fill text-logo-blue me-2"></i>
+              Expert team of experienced developers
+            </li>
+            <p className="bi  text me-2">
+              What more do you need in a mission statement? Every line above is what you will get if you allow Simbesi to handle your mobile app and website development needs. With this incredible mobile application and website vendor, there is no room for mistakes. You will get the best that will make you a leader at any point in time.
+            </p>
+          </ul>
+        ),
+      },
+
+      expertise: {
+        title: "Our Expertise",
+        lead:
+          "A proficient, closely knitted team ready to deliver in any domain.",
+        body: (
+          <>
+          <p className="bi  text me-2">If Simbesi is to be at creative best, then their clients should be given the benefits of a proficient, closely knitted team. With them at Simbesi, you will get a platform that has you covered in any domain of your choice. Their staff strength is made up of consummate experts in their various fields with the goal of delivering.</p>
+          
+
+            <ul className="list-unstyled mb-3">
+              <li className="mb-2">
+                <i className="bi bi-check-circle-fill text-logo-blue me-2"></i>
+                High-quality customized software
+              </li>
+              <li className="mb-2">
+                <i className="bi bi-check-circle-fill text-logo-blue me-2"></i>
+                Robust software architecture
+              </li>
+              <li className="mb-2">
+                <i className="bi bi-check-circle-fill text-logo-blue me-2"></i>
+                Advanced testing solutions
+              </li>
+            </ul>
+
+            <p className="bi  text me-2">
+              You cannot get more than the above from the best mobile application and website vendors around you today. If you want something excitingly different that will pull in committed traffic in their millions; something that has your business covered 24 hours in the day; then you can send this email now to contact@simbesi.com. You will get detailed info.
+            </p>
+          </>
+        ),
+      },
   }), []);
 
   // 3. MANUAL INTERACTION HANDLER

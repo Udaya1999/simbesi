@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import SimbesiLoader from '../src/SimbesiLoader'; // Adjust path if needed
 import NotFound from './NotFound';
 import ErrorBoundary from './ErrorBoundary';
+import DataScience from './Services/DataScience';
 
 // --- Lazy Loaded Components ---
 // Main & Company
@@ -75,6 +76,7 @@ const Routing = () => {
         <Route path="/MachineLearning" element={<MachineLearning />} />
         <Route path="/ComputerVision" element={<ComputerVision />} />
         <Route path="/ConversationalAI" element={<ConversationalAI />} />
+        <Route path="/DataScience" element={<DataScience />} />
 
         {/* Industry Routes */}
         <Route path="/HealthCare" element={<HealthCare />} />

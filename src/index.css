@@ -166,7 +166,7 @@ background: linear-gradient(
 
 .mega-column h4 {
   font-size: 18px;
-  color: #2563eb;
+  color: #21b3c0;
   margin-bottom: 20px;
   text-transform: capitalize;
 }
@@ -180,7 +180,7 @@ background: linear-gradient(
 }
 
 .mega-item:hover {
-  color: #21b3c0 !important;
+  color: #422bb8 !important;
   padding-left: 5px;
 }
 
