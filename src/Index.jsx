@@ -63,7 +63,7 @@ const Index = () => {
                         <div ><Link to="/who-we-are" className="mega-item">Who We Are</Link></div>
                         
                         <div><Link to="/how_we_work" className="mega-item">How We Work</Link></div>
-                        <Link to="/carrers" className="mega-item">Careers</Link>
+                        <Link to="/careers" className="mega-item">Careers</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Explore</h4>

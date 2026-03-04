@@ -80,7 +80,7 @@ body {
   color: #001233;
   cursor: pointer;
   transition: 0.3s ease;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.5px;
 }
 
@@ -118,10 +118,18 @@ body {
   position: absolute;
   top: 80px;
   left: 0;
-  width: 100%;
-  background: #ffffff;
+  width: 80%;
+  margin-left: 10%;
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important ;
+background: linear-gradient(
+  135deg, 
+  #0A1332 0%, 
+  #0d1b47 50%, 
+  #11255e 100%
+) !important;
   border-top: 1px solid #f3f4f6;
-  border-bottom: 3px solid #2563eb;
+  border-bottom: 3px solid #21b3c0;
   opacity: 0;
   visibility: hidden;
   transform: translateY(15px);
@@ -165,14 +173,14 @@ body {
 
 .mega-item {
   padding: 10px 0;
-  color: #4b5563;
+  color: #d7d7d8 !important;
   font-weight: 500;
   cursor: pointer;
   transition: 0.2s;
 }
 
 .mega-item:hover {
-  color: #111827;
+  color: #21b3c0 !important;
   padding-left: 5px;
 }
 

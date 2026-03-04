@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Helmet } from 'react-helmet-async'; 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // Added Link for navigation
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -19,18 +19,21 @@ import eventImg from "../assets/img/byindustry/et1.jpg";
 import restaurantImg from "../assets/img/byindustry/restaurant2.png";
 import sportsImg from "../assets/img/byindustry/sports7.jpg";
 
+// UPDATED: Added 'path' for each industry to navigate to separate components
 const INDUSTRIES = [
-  { title: "Healthcare", img: healthImg, icon: "bi-heart-pulse", desc: "Turning unsettled questions into catalytic change through custom health tech." },
-  { title: "Banking & Finance", img: bankImg, icon: "bi-bank", desc: "Secure, fast, and scalable financial software and mobile portals." },
-  { title: "Education & E-Learning", img: eduImg, icon: "bi-mortarboard", desc: "Making education universal with powerful, interactive management tools." },
-  { title: "Travel & Ticketing", img: travelImg, icon: "bi-ticket-perforated", desc: "Custom e-ticketing portals and kiosks leveraging modern technologies." },
-  { title: "Real Estate & Housing", img: realEstateImg, icon: "bi-house-heart", desc: "Invincible real estate applications for maximum engagement and connectivity." },
-  { title: "Events & Media", img: eventImg, icon: "bi-calendar-event", desc: "End-to-end entertainment solutions to streamline user experience." },
-  { title: "Restaurants", img: restaurantImg, icon: "bi-egg-fried", desc: "Next-gen tech for order tracking, digital menus, and detailed reports." },
-  { title: "Sports", img: sportsImg, icon: "bi-trophy", desc: "Channelizing revenue through high-traffic sports web and mobile platforms." }
+  { title: "Healthcare", img: healthImg, icon: "bi-heart-pulse", desc: "Turning unsettled questions into catalytic change through custom health tech.", path: "/healthcare" },
+  { title: "Banking & Finance", img: bankImg, icon: "bi-bank", desc: "Secure, fast, and scalable financial software and mobile portals.", path: "/BankingFinance" },
+  { title: "Education & E-Learning", img: eduImg, icon: "bi-mortarboard", desc: "Making education universal with powerful, interactive management tools.", path: "/Education" },
+  { title: "Travel & Ticketing", img: travelImg, icon: "bi-ticket-perforated", desc: "Custom e-ticketing portals and kiosks leveraging modern technologies.", path: "/TravelTicketing" },
+  { title: "Real Estate & Housing", img: realEstateImg, icon: "bi-house-heart", desc: "Invincible real estate applications for maximum engagement and connectivity.", path: "/RealEstateHousing" },
+  { title: "Events & Media", img: eventImg, icon: "bi-calendar-event", desc: "End-to-end entertainment solutions to streamline user experience.", path: "/EventsMedia" },
+  { title: "Restaurants", img: restaurantImg, icon: "bi-egg-fried", desc: "Next-gen tech for order tracking, digital menus, and detailed reports.", path: "/Restaurants" },
+  { title: "Sports", img: sportsImg, icon: "bi-trophy", desc: "Channelizing revenue through high-traffic sports web and mobile platforms.", path: "/Sports" }
 ];
 
 const AndroidAppDev = () => {
+
+
     const navigate = useNavigate();
     const handleRedirectToStory2 = () => {
       navigate("/careers"); 
@@ -125,10 +128,15 @@ const AndroidAppDev = () => {
                        <i className={`bi ${item.icon} fs-2 text-white`}></i>
                     </div>
                   </div>
-                  <div className="p-4 card-bg-navy">
-                    <h5 className="fw-bold text-white mb-2">{item.title}</h5>
-                    <p className="small text-light opacity-75">{item.desc}</p>
-                    <a href="#" className="read-more-link-cyan">Read More <i className="bi bi-arrow-right"></i></a>
+                  <div className="p-4 card-bg-navy d-flex flex-column justify-content-between">
+                    <div>
+                      <h5 className="fw-bold text-white mb-2">{item.title}</h5>
+                      <p className="small text-light opacity-75">{item.desc}</p>
+                    </div>
+                    {/* UPDATED: Changed <a> to <Link> for React Router navigation */}
+                    <Link to={item.path} className="read-more-link-cyan mt-3">
+                      Read More <i className="bi bi-arrow-right ms-1"></i>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -176,10 +184,10 @@ const AndroidAppDev = () => {
         .industry-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
         .read-more-link-cyan {
-          font-weight: 700; text-decoration: none; color: var(--brand-cyan); font-size: 0.85rem;
-          transition: gap 0.3s; display: inline-flex; align-items: center; gap: 5px;
+          font-weight: 700; text-decoration: none !important; color: var(--brand-cyan); font-size: 0.85rem;
+          transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 5px;
         }
-        .read-more-link-cyan:hover { gap: 10px; color: white; }
+        .read-more-link-cyan:hover { transform: translateX(5px); color: white; }
 
         .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         .feature-item-pill-dark {

@@ -34,7 +34,7 @@ const Footer = () => {
           <ul>
             <li><Link to="./about">About Us</Link></li>
             <li><Link to="./who-we-are">Why Simbesi</Link></li>
-            <li > <Link to="./carrers">Careers</Link></li>
+            <li > <Link to="./careers">Careers</Link></li>
             <li><Link to="./contact">Contact us</Link></li>
           </ul>
         </div>
@@ -56,8 +56,8 @@ const Footer = () => {
           <h4>Contact</h4>
           <ul>
             <li>contact@simbesi.com</li>
-            <li>Get Started</li>
-            <li>Request a Quote</li>
+            <li> <Link to= "./contact"> Get Started</Link></li>
+            <li><Link to= "./contact">Request a Quote</Link></li>
           </ul>
         </div>
 
