@@ -58,14 +58,19 @@ const Index = () => {
                       <div className="mega-column">
                         <h4>Company</h4>
                         <Link to="/who-we-are" className="mega-item" onClick={() => setMenuOpen(false)}>Who We Are</Link>
+                        <br />
                         <Link to="/how_we_work" className="mega-item" onClick={() => setMenuOpen(false)}>How We Work</Link>
+                        <br />
                         <Link to="/careers" className="mega-item" onClick={() => setMenuOpen(false)}>Careers</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Explore</h4>
                         <Link to="/life_at_simbasi" className="mega-item" onClick={() => setMenuOpen(false)}>Life @ Simbesi</Link>
+                        <br />
                         <Link to="/our_clients" className="mega-item" onClick={() => setMenuOpen(false)}>Our Clients</Link>
+                        <br />
                         <Link to="/testimonials" className="mega-item" onClick={() => setMenuOpen(false)}>Testimonials</Link>
+                        <br />
                       </div>
                       <div className="mega-column">
                         <Link to="/about" className="mega-item highlight" onClick={() => setMenuOpen(false)}>
@@ -88,29 +93,41 @@ const Index = () => {
                       <div className="mega-column">
                         <h4>Website Development</h4>
                         <Link to="/websitedev" className="mega-item" onClick={() => setMenuOpen(false)}>Product Design</Link>
+                        <br />
                         <Link to="/websitedev" className="mega-item" onClick={() => setMenuOpen(false)}>Web App Development</Link>
+                        <br />
                         <Link to="/softwaremainsupport" className="mega-item" onClick={() => setMenuOpen(false)}>Support & maintenance</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Mobile App Development</h4>
                         <Link to="/androidappdev" className="mega-item" onClick={() => setMenuOpen(false)}>Android</Link>
+                        <br />
                         <Link to="/iosappdev" className="mega-item" onClick={() => setMenuOpen(false)}>iOS</Link>
+                        <br />
                         <Link to="/hybridmobiledev" className="mega-item" onClick={() => setMenuOpen(false)}>Cross Platform</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Design</h4>
                         <Link to="/mobiledev" className="mega-item" onClick={() => setMenuOpen(false)}>UI / UX</Link>
+                        <br />
                         <Link to="/mobiledev" className="mega-item" onClick={() => setMenuOpen(false)}>Prototyping</Link>
+                        <br />
                         <Link to="/mobiledev" className="mega-item" onClick={() => setMenuOpen(false)}>Research</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Other Services We Offer</h4>
                         <Link to="/hybridmobiledev" className="mega-item" onClick={() => setMenuOpen(false)}>Hybrid Mobile Application</Link>
+                        <br />
                         <Link to="/ipadapplications" className="mega-item" onClick={() => setMenuOpen(false)}>iPad Application Development</Link>
+                        <br />
                         <Link to="/artificialintel" className="mega-item" onClick={() => setMenuOpen(false)}>Artificial Intelligence</Link>
+                        <br />
                         <Link to="/argumentreality" className="mega-item" onClick={() => setMenuOpen(false)}>Augmented Reality</Link>
+                        <br />
                         <Link to="/softwaremainsupport" className="mega-item" onClick={() => setMenuOpen(false)}>Software Maintenance & Support</Link>
+                        <br />
                         <Link to="/consulting" className="mega-item" onClick={() => setMenuOpen(false)}>Consulting Services</Link>
+                        <br />
                       </div>
                     </div>
                   </div>
@@ -128,15 +145,21 @@ const Index = () => {
                       <div className="mega-column">
                         <h4>On-Demand Mobile App</h4>
                         <Link to="/mobiledev" className="mega-item" onClick={() => setMenuOpen(false)}>Mobile App Development</Link>
+                        <br />
                         <Link to="/iosappdev" className="mega-item" onClick={() => setMenuOpen(false)}>iOS App Development</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Artificial Intelligence Solutions</h4>
                         <Link to="/artificialintel" className="mega-item" onClick={() => setMenuOpen(false)}>AI</Link>
+                        <br />
                         <Link to="/argumentreality" className="mega-item" onClick={() => setMenuOpen(false)}>AR / VR</Link>
+                        <br />
                         <Link to="/MachineLearning" className="mega-item" onClick={() => setMenuOpen(false)}>Machine Learning</Link>
+                        <br />
                         <Link to="/DataScience" className="mega-item" onClick={() => setMenuOpen(false)}>Data Science</Link>
+                        <br />
                         <Link to="/ComputerVision" className="mega-item" onClick={() => setMenuOpen(false)}>Computer Vision</Link>
+                        <br />
                         <Link to="/ConversationalAI" className="mega-item" onClick={() => setMenuOpen(false)}>Conversational AI</Link>
                       </div>
                       <div className="mega-column">

@@ -31,6 +31,42 @@ const Home = () => {
   const handleContact = () => navigate("/contact");
   const handelViewOurWork = () => navigate("/androidappdev");
 
+  // Local Business Information - Updated with correct details from Google Maps
+  const businessInfo = {
+    name: "Simbesi Technosoft Private Limited",
+    description: "Simbesi Technosoft, a premier software company, specializes in creating exceptional digital experiences. We craft innovative mobile applications and websites that help businesses thrive in a competitive digital landscape. Located at 2nd floor, Sivaji Building, Gauthambudda Road, beside Hotel Sri Grand, Mangalagiri, Guntur.",
+    url: "https://simbesi.onrender.com",
+    phone: "+919611272633",
+    email: "contact@simbesi.com",
+    address: {
+      streetAddress: "2nd floor, Sivaji Building, Gauthambudda Road, beside Hotel Sri Grand",
+      addressLocality: "Mangalagiri",
+      addressRegion: "Guntur",
+      postalCode: "522503",
+      addressCountry: "IN",
+      fullAddress: "2nd floor, Sivaji Building, Gauthambudda Road, beside Hotel Sri Grand, Mangalagiri, Guntur, Andhra Pradesh 522503"
+    },
+    // Correct coordinates from Google Maps listing
+    geo: {
+      latitude: "16.4316741",
+      longitude: "80.5663667"
+    },
+    openingHours: {
+      monday: "09:00-18:00",
+      tuesday: "09:00-18:00",
+      wednesday: "09:00-18:00",
+      thursday: "09:00-18:00",
+      friday: "09:00-18:00",
+      saturday: "09:00-18:00",
+      sunday: "Closed"
+    },
+    socialProfiles: {
+      facebook: "https://www.facebook.com/simbesitechnosoft/",
+      linkedin: "https://www.linkedin.com/company/simbesi",
+      twitter: "https://twitter.com/simbesi"
+    }
+  };
+
   const solutions = [
     { title: "AI Mobile Apps", icon: "🤖", desc: "Smart applications integrated with Machine Learning, NLP, and Computer Vision." },
     { title: "Android & iOS", icon: "📱", desc: "Native and cross-platform mobile apps with AI at their core." },
@@ -46,28 +82,168 @@ const Home = () => {
         {/* Primary Meta Tags */}
         <title>SIMBESI - Shape Your Vision | AI-Powered Digital Transformation</title>
         <meta name="title" content="SIMBESI - Shape Your Vision | AI-Powered Digital Transformation" />
-        <meta name="description" content="SIMBESI helps businesses adapt and adopt digital transformation through innovative AI-powered mobile solutions, web development, and IT consulting. Expert team with 150+ successful deployments across healthcare, finance, retail, and more." />
-        <meta name="keywords" content="SIMBESI, digital transformation, AI development, mobile app development, Android development, iOS development, web development, IT consulting, machine learning, conversational AI, software maintenance, technology solutions" />
+        <meta name="description" content={businessInfo.description} />
+        <meta name="keywords" content="SIMBESI, digital transformation, AI development, mobile app development, Android development, iOS development, web development, IT consulting, machine learning, software company in Mangalagiri, Guntur, Simbesi Technosoft" />
         <meta name="author" content="SIMBESI" />
         <meta name="robots" content="index, follow" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://simbesi.onrender.com/" />
+        <meta property="og:url" content={businessInfo.url} />
         <meta property="og:title" content="SIMBESI - Shape Your Vision | AI-Powered Digital Transformation" />
-        <meta property="og:description" content="Precision-engineered AI mobile solutions for digital transformation. 150+ successful deployments across healthcare, finance, retail, and more." />
+        <meta property="og:description" content={businessInfo.description} />
         <meta property="og:image" content={logo} />
         <meta property="og:site_name" content="SIMBESI" />
+        <meta property="og:locale" content="en_IN" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://simbesi.onrender.com/" />
+        <meta name="twitter:url" content={businessInfo.url} />
         <meta name="twitter:title" content="SIMBESI - Shape Your Vision | AI-Powered Digital Transformation" />
-        <meta name="twitter:description" content="AI-powered mobile solutions for digital transformation. 150+ successful deployments." />
+        <meta name="twitter:description" content="AI-powered mobile solutions for digital transformation. 150+ successful deployments. Located in Mangalagiri, Guntur, Andhra Pradesh." />
         <meta name="twitter:image" content={logo} />
         
         {/* Canonical URL */}
-        <link rel="canonical" href="https://simbesi.onrender.com/" />
+        <link rel="canonical" href={businessInfo.url} />
+        
+        {/* Local Business Schema - JSON-LD with updated coordinates */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": businessInfo.name,
+            "description": businessInfo.description,
+            "url": businessInfo.url,
+            "telephone": businessInfo.phone,
+            "email": businessInfo.email,
+            "logo": "https://simbesi.onrender.com/homenew.png",
+            "image": "https://simbesi.onrender.com/homenew.png",
+            "priceRange": "₹₹",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": businessInfo.address.streetAddress,
+              "addressLocality": businessInfo.address.addressLocality,
+              "addressRegion": businessInfo.address.addressRegion,
+              "postalCode": businessInfo.address.postalCode,
+              "addressCountry": businessInfo.address.addressCountry
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": businessInfo.geo.latitude,
+              "longitude": businessInfo.geo.longitude
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Sunday",
+                "opens": "Closed",
+                "closes": "Closed"
+              }
+            ],
+            "sameAs": [
+              businessInfo.socialProfiles.facebook,
+              businessInfo.socialProfiles.linkedin,
+              businessInfo.socialProfiles.twitter
+            ],
+            "hasMap": `https://www.google.com/maps/place/Simbesi+Technosoft+Private+Limited/@${businessInfo.geo.latitude},${businessInfo.geo.longitude}`,
+            "areaServed": {
+              "@type": "City",
+              "name": "Mangalagiri, Guntur, Andhra Pradesh"
+            },
+            "makesOffer": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI Mobile App Development",
+                  "description": "Smart applications integrated with Machine Learning, NLP, and Computer Vision"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Web Development",
+                  "description": "Custom web applications and digital ecosystems"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "IT Consulting",
+                  "description": "Strategic technology advisory and digital transformation"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Android App Development",
+                  "description": "Native and cross-platform Android applications"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "iOS App Development",
+                  "description": "Premium iOS applications for Apple ecosystem"
+                }
+              }
+            ]
+          })}
+        </script>
+        
+        {/* Organization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": businessInfo.name,
+            "url": businessInfo.url,
+            "logo": "https://simbesi.onrender.com/homenew.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": businessInfo.phone,
+              "contactType": "customer service",
+              "availableLanguage": ["English", "Telugu", "Hindi"]
+            },
+            "sameAs": [
+              businessInfo.socialProfiles.facebook,
+              businessInfo.socialProfiles.linkedin,
+              businessInfo.socialProfiles.twitter
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": businessInfo.address.streetAddress,
+              "addressLocality": businessInfo.address.addressLocality,
+              "addressRegion": businessInfo.address.addressRegion,
+              "postalCode": businessInfo.address.postalCode,
+              "addressCountry": businessInfo.address.addressCountry
+            }
+          })}
+        </script>
+        
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": businessInfo.url
+            }]
+          })}
+        </script>
       </Helmet>
 
       <main className="rich-experience-wrapper">
