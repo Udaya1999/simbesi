@@ -4,6 +4,7 @@ import SimbesiLoader from '../src/SimbesiLoader'; // Adjust path if needed
 import NotFound from './NotFound';
 import ErrorBoundary from './ErrorBoundary';
 import DataScience from './Services/DataScience';
+import Industry from './Solutions/Industry';
 
 // --- Lazy Loaded Components ---
 // Main & Company
@@ -87,6 +88,7 @@ const Routing = () => {
         <Route path="/EventsMedia" element={<EventsMedia />} />
         <Route path="/Restaurants" element={<Restaurants />} />
         <Route path="/Sports" element={<Sports />} />
+        <Route path='/Industry' element={<Industry />} />
 
         {/* Contact */}
         <Route path="/contact" element={<Contact />} />

@@ -153,6 +153,13 @@ const Index = () => {
                         <div><Link to="./ConversationalAI" className="mega-item">Conversational AI</Link></div>
                        
                       </div>
+                      <div className="mega-column">
+                        <h4>Industyr's</h4>
+                        <div><Link to="./Industry" className="mega-item">Go to Industry's</Link></div>
+                        
+
+                      
+                      </div>
                     </div>
                   </div>
                 </div>
