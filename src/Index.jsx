@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-import bgVideo from "./assets/vid/ai-bg-video.mp4";
 import logo from "./assets/img/logonew.png";
 import { Link } from "react-router-dom";
 
@@ -28,11 +27,11 @@ const Index = () => {
         <div className="nav-container">
 
           {/* Logo */}
-         <Link to='/'>
-          <div className="logo-section">
-            <img src={logo} alt="Simbesi Logo" className="logo-img" />
-          </div>
-         </Link>
+          <Link to='/'>
+            <div className="logo-section">
+              <img src={logo} alt="Simbesi Logo" className="logo-img" />
+            </div>
+          </Link>
 
           {/* Hamburger */}
           <div
@@ -49,33 +48,29 @@ const Index = () => {
             <ul>
 
               {/* COMPANY */}
-              <li
-                className="mega-trigger"
-                onClick={() => toggleDropdown("company")}
-              >
-                COMPANY ▾
-
+              <li className="mega-trigger">
+                <div className="nav-link" onClick={() => toggleDropdown("company")}>
+                  COMPANY <span className="dropdown-arrow">▾</span>
+                </div>
                 <div className={`mega-menu ${mobileDropdown === "company" ? "mobile-open" : ""}`}>
                   <div className="mega-wrapper">
                     <div className="mega-grid">
                       <div className="mega-column">
                         <h4>Company</h4>
-                        <div ><Link to="/who-we-are" className="mega-item">Who We Are</Link></div>
-                        
-                        <div><Link to="/how_we_work" className="mega-item">How We Work</Link></div>
-                        <Link to="/careers" className="mega-item">Careers</Link>
+                        <Link to="/who-we-are" className="mega-item" onClick={() => setMenuOpen(false)}>Who We Are</Link>
+                        <Link to="/how_we_work" className="mega-item" onClick={() => setMenuOpen(false)}>How We Work</Link>
+                        <Link to="/careers" className="mega-item" onClick={() => setMenuOpen(false)}>Careers</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Explore</h4>
-                       <div> <Link to="/life_at_simbasi" className="mega-item">Life @ Simbesi</Link></div>
-                        <div><Link to="/our_clients" className="mega-item">Our Clients</Link></div>
-                        <div><Link to="/testimonials" className="mega-item">Testimonials</Link></div>
+                        <Link to="/life_at_simbasi" className="mega-item" onClick={() => setMenuOpen(false)}>Life @ Simbesi</Link>
+                        <Link to="/our_clients" className="mega-item" onClick={() => setMenuOpen(false)}>Our Clients</Link>
+                        <Link to="/testimonials" className="mega-item" onClick={() => setMenuOpen(false)}>Testimonials</Link>
                       </div>
                       <div className="mega-column">
-                        {/* <h4>Company</h4> */}
-                        <div >
-                          <div><Link  className="mega-item" to="/about"  >Learn more about our journey & achievements.</Link></div>
-                        </div>
+                        <Link to="/about" className="mega-item highlight" onClick={() => setMenuOpen(false)}>
+                          Learn more about our journey & achievements.
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -83,44 +78,39 @@ const Index = () => {
               </li>
 
               {/* SERVICES */}
-              <li
-                className="mega-trigger"
-                onClick={() => toggleDropdown("services")}
-              >
-                SERVICES ▾
+              <li className="mega-trigger">
+                <div className="nav-link" onClick={() => toggleDropdown("services")}>
+                  SERVICES <span className="dropdown-arrow">▾</span>
+                </div>
                 <div className={`mega-menu ${mobileDropdown === "services" ? "mobile-open" : ""}`}>
                   <div className="mega-wrapper">
                     <div className="mega-grid">
                       <div className="mega-column">
                         <h4>Website Development</h4>
-                        <div ><div><Link to="./websitedev" className="mega-item">Product Design</Link></div></div>
-                        <div ><div><Link to="./websitedev"  className="mega-item">web App Development</Link></div></div>
-                        <div ><div><Link to="./softwaremainsupport"  className="mega-item">Support & maintenance</Link></div></div>
-                        
+                        <Link to="/websitedev" className="mega-item" onClick={() => setMenuOpen(false)}>Product Design</Link>
+                        <Link to="/websitedev" className="mega-item" onClick={() => setMenuOpen(false)}>Web App Development</Link>
+                        <Link to="/softwaremainsupport" className="mega-item" onClick={() => setMenuOpen(false)}>Support & maintenance</Link>
                       </div>
                       <div className="mega-column">
-                        <h4>Mobile App Development </h4> 
-                        <div><Link to="./androidappdev" className="mega-item">Android</Link> </div>
-                        <div > <Link to="./iosappdev" className="mega-item">iOS</Link></div>
-                        <div > <Link to="./hybridmobiledev" className="mega-item">Cross Platform</Link></div>
+                        <h4>Mobile App Development</h4>
+                        <Link to="/androidappdev" className="mega-item" onClick={() => setMenuOpen(false)}>Android</Link>
+                        <Link to="/iosappdev" className="mega-item" onClick={() => setMenuOpen(false)}>iOS</Link>
+                        <Link to="/hybridmobiledev" className="mega-item" onClick={() => setMenuOpen(false)}>Cross Platform</Link>
                       </div>
                       <div className="mega-column">
-                        <h4>Design </h4>
-                        <div ><Link to="./mobiledev" className="mega-item">UI / UX</Link></div>
-                          <div ><Link  to="./mobiledev" className="mega-item">Prototyping</Link></div>
-                            <div ><Link  to="./mobiledev" className="mega-item">Research</Link></div>
-                        
+                        <h4>Design</h4>
+                        <Link to="/mobiledev" className="mega-item" onClick={() => setMenuOpen(false)}>UI / UX</Link>
+                        <Link to="/mobiledev" className="mega-item" onClick={() => setMenuOpen(false)}>Prototyping</Link>
+                        <Link to="/mobiledev" className="mega-item" onClick={() => setMenuOpen(false)}>Research</Link>
                       </div>
                       <div className="mega-column">
-                        <h4>Other Services We Offer </h4>
-                        
-                        <div><Link to="./hybridmobiledev" className="mega-item">Hybrid Mobile Application</Link></div>
-                        <div><Link to="./ipadapplications" className="mega-item">Ipad Application Development</Link></div>
-                        <div><Link to="./artificialintel" className="mega-item">Artificial Intelligence</Link></div>
-                        <div><Link to="./argumentreality" className="mega-item">Augmented Reality</Link></div>
-                        <div><Link to="./softwaremainsupport" className="mega-item">Software Maintenance & Support</Link></div>
-                        <div><Link to="./consulting" className="mega-item">Consulting Services</Link></div>
-                        
+                        <h4>Other Services We Offer</h4>
+                        <Link to="/hybridmobiledev" className="mega-item" onClick={() => setMenuOpen(false)}>Hybrid Mobile Application</Link>
+                        <Link to="/ipadapplications" className="mega-item" onClick={() => setMenuOpen(false)}>iPad Application Development</Link>
+                        <Link to="/artificialintel" className="mega-item" onClick={() => setMenuOpen(false)}>Artificial Intelligence</Link>
+                        <Link to="/argumentreality" className="mega-item" onClick={() => setMenuOpen(false)}>Augmented Reality</Link>
+                        <Link to="/softwaremainsupport" className="mega-item" onClick={() => setMenuOpen(false)}>Software Maintenance & Support</Link>
+                        <Link to="/consulting" className="mega-item" onClick={() => setMenuOpen(false)}>Consulting Services</Link>
                       </div>
                     </div>
                   </div>
@@ -128,37 +118,30 @@ const Index = () => {
               </li>
 
               {/* SOLUTIONS */}
-              <li
-                className="mega-trigger"
-                onClick={() => toggleDropdown("solutions")}
-              >
-                SOLUTIONS ▾
+              <li className="mega-trigger">
+                <div className="nav-link" onClick={() => toggleDropdown("solutions")}>
+                  SOLUTIONS <span className="dropdown-arrow">▾</span>
+                </div>
                 <div className={`mega-menu ${mobileDropdown === "solutions" ? "mobile-open" : ""}`}>
                   <div className="mega-wrapper">
                     <div className="mega-grid">
                       <div className="mega-column">
-                        <h4>On-Demand Mobile App </h4>
-                        <div><Link to="./mobiledev" className="mega-item">Mobile App Development</Link></div>
-                        <div><Link to="./iosappdev" className="mega-item">IOS APP Development</Link></div>
-
-                      
+                        <h4>On-Demand Mobile App</h4>
+                        <Link to="/mobiledev" className="mega-item" onClick={() => setMenuOpen(false)}>Mobile App Development</Link>
+                        <Link to="/iosappdev" className="mega-item" onClick={() => setMenuOpen(false)}>iOS App Development</Link>
                       </div>
                       <div className="mega-column">
                         <h4>Artificial Intelligence Solutions</h4>
-                        <div><Link to="./artificialintel" className="mega-item">AI</Link></div>
-                        <div><Link to="./argumentreality" className="mega-item">AR / VR</Link></div>
-                        <div><Link to="./MachineLearning" className="mega-item">Machine Learning</Link></div>
-                        <div><Link to="./DataScience" className="mega-item">Data Science</Link></div>
-                        <div><Link to="./ComputerVision" className="mega-item">Computer Vision</Link></div>
-                        <div><Link to="./ConversationalAI" className="mega-item">Conversational AI</Link></div>
-                       
+                        <Link to="/artificialintel" className="mega-item" onClick={() => setMenuOpen(false)}>AI</Link>
+                        <Link to="/argumentreality" className="mega-item" onClick={() => setMenuOpen(false)}>AR / VR</Link>
+                        <Link to="/MachineLearning" className="mega-item" onClick={() => setMenuOpen(false)}>Machine Learning</Link>
+                        <Link to="/DataScience" className="mega-item" onClick={() => setMenuOpen(false)}>Data Science</Link>
+                        <Link to="/ComputerVision" className="mega-item" onClick={() => setMenuOpen(false)}>Computer Vision</Link>
+                        <Link to="/ConversationalAI" className="mega-item" onClick={() => setMenuOpen(false)}>Conversational AI</Link>
                       </div>
                       <div className="mega-column">
-                        <h4>Industyr's</h4>
-                        <div><Link to="./Industry" className="mega-item">Go to Industry's</Link></div>
-                        
-
-                      
+                        <h4>Industries</h4>
+                        <Link to="/Industry" className="mega-item" onClick={() => setMenuOpen(false)}>Go to Industries</Link>
                       </div>
                     </div>
                   </div>
@@ -166,14 +149,14 @@ const Index = () => {
               </li>
 
               <li className="nav-btn-item">
-              <Link to="/contact" className="contact-btn">
-                Contact Us
-              </Link>
-            </li>
+                <Link to="/contact" className="contact-btn" onClick={() => setMenuOpen(false)}>
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
-      </header>    
+      </header>
     </>
   );
 };

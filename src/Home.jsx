@@ -13,10 +13,6 @@ import Industries from './Company/Industries';
 import ReadyToBuild from './Company/ReadyToBuild';
 import logo from "./assets/img/logonew.png";
 
-// Use existing images or create fallbacks
-// Option 1: Use your existing logo as fallback for OG images
-const defaultOgImage = logo;
-
 const Home = () => {
   const navigate = useNavigate();
   const videoRef = useRef(null);
@@ -46,106 +42,36 @@ const Home = () => {
 
   return (
     <>
-      {/* ==================== COMPREHENSIVE SEO CONFIGURATION ==================== */}
       <Helmet>
-        {/* ===== PRIMARY META TAGS ===== */}
-        <html lang="en" />
+        {/* Primary Meta Tags */}
         <title>SIMBESI - Shape Your Vision | AI-Powered Digital Transformation</title>
         <meta name="title" content="SIMBESI - Shape Your Vision | AI-Powered Digital Transformation" />
         <meta name="description" content="SIMBESI helps businesses adapt and adopt digital transformation through innovative AI-powered mobile solutions, web development, and IT consulting. Expert team with 150+ successful deployments across healthcare, finance, retail, and more." />
         <meta name="keywords" content="SIMBESI, digital transformation, AI development, mobile app development, Android development, iOS development, web development, IT consulting, machine learning, conversational AI, software maintenance, technology solutions" />
         <meta name="author" content="SIMBESI" />
         <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow" />
-        <meta name="language" content="English" />
-        <meta name="revisit-after" content="7 days" />
-        <meta name="distribution" content="global" />
-        <meta name="rating" content="General" />
         
-        {/* ===== VIEWPORT & MOBILE OPTIMIZATION ===== */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-        <meta name="theme-color" content="#0A1332" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="SIMBESI" />
-        
-        {/* ===== CANONICAL URL ===== */}
-        <link rel="canonical" href="https://simbesi.onrender.com/" />
-        <link rel="alternate" href="https://simbesi.onrender.com/" hreflang="en" />
-        
-        {/* ===== FAVICON & ICONS ===== */}
-        <link rel="icon" type="image/png" href={logo} />
-        <link rel="apple-touch-icon" href={logo} />
-        
-        {/* ===== OPEN GRAPH / FACEBOOK / LINKEDIN ===== */}
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://simbesi.onrender.com/" />
         <meta property="og:title" content="SIMBESI - Shape Your Vision | AI-Powered Digital Transformation" />
-        <meta property="og:description" content="Precision-engineered AI mobile solutions for digital transformation. 150+ successful deployments across healthcare, finance, retail, and more. Build your vision with SIMBESI." />
+        <meta property="og:description" content="Precision-engineered AI mobile solutions for digital transformation. 150+ successful deployments across healthcare, finance, retail, and more." />
         <meta property="og:image" content={logo} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="SIMBESI - AI-Powered Digital Transformation Solutions" />
         <meta property="og:site_name" content="SIMBESI" />
-        <meta property="og:locale" content="en_US" />
         
-        {/* ===== TWITTER CARD ===== */}
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://simbesi.onrender.com/" />
         <meta name="twitter:title" content="SIMBESI - Shape Your Vision | AI-Powered Digital Transformation" />
-        <meta name="twitter:description" content="AI-powered mobile solutions for digital transformation. 150+ successful deployments. Expert team of AI engineers and developers." />
+        <meta name="twitter:description" content="AI-powered mobile solutions for digital transformation. 150+ successful deployments." />
         <meta name="twitter:image" content={logo} />
-        <meta name="twitter:image:alt" content="SIMBESI - Innovative Technology Solutions" />
-        <meta name="twitter:site" content="@simbesi" />
-        <meta name="twitter:creator" content="@simbesi" />
         
-        {/* ===== BUSINESS & GEO TAGS ===== */}
-        <meta name="geo.region" content="US" />
-        <meta name="geo.position" content="37.09024;-95.712891" />
-        <meta name="ICBM" content="37.09024, -95.712891" />
-        
-        {/* ===== SERVICE-SPECIFIC KEYWORDS FOR SEO ===== */}
-        <meta name="services" content="Android App Development, iOS App Development, Web Development, AI & Machine Learning, Conversational AI, IT Consulting, Software Maintenance" />
-        
-        {/* ===== STRUCTURED DATA (JSON-LD) ===== */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "SIMBESI",
-            "url": "https://simbesi.onrender.com",
-            "logo": logo,
-            "description": "SIMBESI helps businesses adapt and adopt digital transformation through innovative AI-powered mobile solutions.",
-            "sameAs": [
-              "https://www.linkedin.com/company/simbesi",
-              "https://twitter.com/simbesi"
-            ],
-            "foundingDate": "2015",
-            "numberOfEmployees": {
-              "@type": "QuantitativeValue",
-              "value": "50"
-            }
-          })}
-        </script>
-        
-        {/* ===== BREADCRUMB STRUCTURED DATA ===== */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [{
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://simbesi.onrender.com/"
-            }]
-          })}
-        </script>
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://simbesi.onrender.com/" />
       </Helmet>
 
       <main className="rich-experience-wrapper">
-        {/* --- HERO SECTION WITH MASKED VIDEO --- */}
+        {/* Hero Section */}
         <section className="hero-viewport">
           <video ref={videoRef} autoPlay loop muted playsInline className="hero-video-bg">
             <source src={bgVideo} type="video/mp4" />
@@ -167,7 +93,7 @@ const Home = () => {
               <button onClick={handelViewOurWork} className="btn-glass-secondary">View Our Work</button>
             </div>
 
-            {/* --- FLOATING STATS BAR --- */}
+            {/* Stats Bar */}
             <div className="stats-glass-card" data-aos="flip-up" data-aos-delay="800">
               <div className="row g-0 py-4">
                 {[
@@ -187,7 +113,7 @@ const Home = () => {
           </div>
         </section>
 
-        {/* --- SOLUTIONS GRID WITH FLOATING CARDS --- */}
+        {/* Solutions Grid */}
         <section className="solutions-outer-space py-5">
           <div className="container py-5 text-center">
             <h2 className="section-title-rich mb-5" data-aos="fade-right">Intelligent Solutions - Powered by <span className="glow-text">AI</span></h2>
@@ -224,7 +150,6 @@ const Home = () => {
 
         .rich-experience-wrapper { background: var(--s-navy); color: #fff; overflow-x: hidden; }
 
-        /* Hero Styling */
         .hero-viewport { height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden; }
         .hero-video-bg { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: brightness(0.6); }
         .hero-overlay-gradient { 
@@ -239,11 +164,10 @@ const Home = () => {
           color: var(--s-cyan); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;
         }
 
-        .hero-main-title { font-size: clamp(2.5rem, 6vw, 4.5rem); font-family: 'Outfit', sans-serif; font-weight: 800; }
+        .hero-main-title { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; }
         .glow-text { color: var(--s-cyan); text-shadow: 0 0 30px rgba(0, 210, 255, 0.5); }
         .hero-subtitle { font-size: 1.25rem; color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto; }
 
-        /* Buttons */
         .btn-glow-primary {
           background: var(--s-cyan); color: var(--s-navy); padding: 16px 45px; border-radius: 50px;
           border: none; font-weight: 800; transition: 0.4s; box-shadow: 0 0 20px rgba(0,210,255,0.4);
@@ -256,12 +180,8 @@ const Home = () => {
           border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px); transition: 0.4s; margin-left: 15px;
           cursor: pointer;
         }
-        .btn-glass-secondary:hover {
-          background: rgba(255,255,255,0.15);
-          transform: translateY(-2px);
-        }
+        .btn-glass-secondary:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
 
-        /* Stats Card */
         .stats-glass-card {
           margin-top: 80px; background: rgba(255, 255, 255, 0.03); 
           backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1);
@@ -269,13 +189,12 @@ const Home = () => {
         }
         .stat-block { border-right: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
         .stat-block:last-child { border-right: none; }
-        .stat-value { color: var(--s-cyan); font-size: 2.8rem; font-weight: 800; font-family: 'Outfit'; }
+        .stat-value { color: var(--s-cyan); font-size: 2.8rem; font-weight: 800; }
         .stat-label { font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
         .stat-sub { color: rgba(255,255,255,0.4); font-size: 0.75rem; }
 
-        /* Solutions Section */
         .solutions-outer-space { background: linear-gradient(180deg, var(--s-navy) 0%, #050814 100%); }
-        .section-title-rich { font-family: 'Outfit'; font-size: 3rem; font-weight: 800; color: #fff; }
+        .section-title-rich { font-size: 3rem; font-weight: 800; color: #fff; }
 
         .glass-solution-card {
           background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
@@ -290,9 +209,9 @@ const Home = () => {
         .icon-sphere { 
           width: 70px; height: 70px; background: rgba(0, 210, 255, 0.1); 
           border-radius: 50%; display: flex; align-items: center; justify-content: center;
-          font-size: 2.5rem; margin-bottom: 25px; box-shadow: inset 0 0 20px rgba(0,210,255,0.2);
+          font-size: 2.5rem; margin-bottom: 25px;
         }
-        .card-heading { font-family: 'Outfit'; font-weight: 700; font-size: 1.5rem; margin-bottom: 1rem; }
+        .card-heading { font-weight: 700; font-size: 1.5rem; margin-bottom: 1rem; }
         .card-paragraph { color: rgba(255,255,255,0.5); font-size: 0.95rem; line-height: 1.6; }
         
         .card-shine-effect {
@@ -308,11 +227,6 @@ const Home = () => {
           .glass-solution-card { padding: 30px 20px; }
           .hero-actions { display: flex; flex-direction: column; gap: 15px; align-items: center; }
           .btn-glow-primary, .btn-glass-secondary { width: 100%; max-width: 280px; margin: 0; }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-          .glass-solution-card { padding: 35px 25px; }
-          .card-heading { font-size: 1.3rem; }
         }
       `}</style>
     </>
