@@ -1,32 +1,74 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-// --- Asset Imports ---
-import client1 from "../assets/img/client1.png";
-import client2 from "../assets/img/client2.png";
-import client3 from "../assets/img/client3.png";
-import client4 from "../assets/img/client4.png";
-import client5 from "../assets/img/client5.png";
-import client6 from "../assets/img/client6.png";
-import client7 from "../assets/img/client7.png";
-import client8 from "../assets/img/client8.png";
+import HomeLensImg from "../assets/img/HomeLens.jpg";
+import EliteEdu from "../assets/img/EliteEdu.jpg";
 
 const CLIENTS = [
-  { id: 1, img: client1, name: "Partner 1" },
-  { id: 2, img: client2, name: "Partner 2" },
-  { id: 3, img: client3, name: "Partner 3" },
-  { id: 4, img: client4, name: "Partner 4" },
-  { id: 5, img: client5, name: "Partner 5" },
-  { id: 6, img: client6, name: "Partner 6" },
-  { id: 7, img: client7, name: "Partner 7" },
-  { id: 8, img: client8, name: "Partner 8" },
+  { 
+    id: 1, 
+    img: "https://www.lemnisk.co/wp-content/uploads/elementor/thumbs/Lemnisk_New-Logo-rhccjzbuo1mb0hbkby2zxccc23d68igo7o3rlsq66w.png", 
+    name: "Lemnisk", 
+    // website: "https://www.lemnisk.co/" 
+  },
+  { 
+    id: 2, 
+    img: "https://www.someshwara.com/images/logo-dark.svg", 
+    name: "Someshwara", 
+    // website: "https://www.someshwara.com/products/" 
+  },
+  { 
+    id: 3, 
+    img: "https://ephaseglobal.com/wp-content/uploads/2019/09/ephase-logo-1.png", 
+    name: "Ephase Global", 
+    // website: "https://ephaseglobal.com/" 
+  },
+  { 
+    id: 4, 
+    img: "https://mamma-miya.com/wp-content/uploads/2017/11/about_logo.png", 
+    name: "Mamma Miya", 
+    // website: "https://mamma-miya.com/" 
+  },
+   { 
+    id: 5, 
+    img: HomeLensImg, 
+    name: "HomeLense", 
+   
+  },
+  { 
+    id: 6, 
+    img:EliteEdu, 
+    name: "EliteEdu", 
+   
+  }
 ];
 
 const OurClients = () => {
+  const [imageErrors, setImageErrors] = useState({});
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  const handleLogoClick = (website) => {
+    if (website) {
+      window.open(website, "_blank", "noopener,noreferrer");
+    }
+  };
+
+  const handleImageError = (clientId, clientName) => {
+    setImageErrors(prev => ({
+      ...prev,
+      [clientId]: `https://via.placeholder.com/200x100/6c757d/white?text=${encodeURIComponent(clientName)}`
+    }));
+  };
+
+  const getImageSrc = (client) => {
+    if (imageErrors[client.id]) {
+      return imageErrors[client.id];
+    }
+    return client.img;
+  };
 
   return (
     <section className="clients-section py-5 overflow-hidden mb-7 mt-5">
@@ -36,7 +78,7 @@ const OurClients = () => {
         </h2>
         <div className="accent-bar mx-auto mb-4"></div>
         <p className="lead client-subtext mx-auto">
-          Robust partnerships. Scalable results. We work on your ideas to make your ideas work.
+          Robust partnerships. Scalable results. We work with industry leaders to deliver excellence.
         </p>
       </div>
 
@@ -44,9 +86,20 @@ const OurClients = () => {
       <div className="marquee-wrapper mt-5">
         <div className="marquee-content">
           {[...CLIENTS, ...CLIENTS].map((client, index) => (
-            <div className="marquee-item" key={index}>
+            <div 
+              className="marquee-item" 
+              key={`${client.id}-${index}`}
+              onClick={() => handleLogoClick(client.website)}
+            >
               <div className="client-logo-box shadow-sm">
-                <img src={client.img} alt={client.name} />
+                <img 
+                  src={getImageSrc(client)} 
+                  alt={client.name}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    handleImageError(client.id, client.name);
+                  }}
+                />
               </div>
             </div>
           ))}
@@ -85,7 +138,7 @@ const OurClients = () => {
           display: flex;
           overflow: hidden;
           user-select: none;
-          padding: 20px 0; /* Extra padding so the scale doesn't get cut off */
+          padding: 20px 0;
           mask-image: linear-gradient(
             to right,
             transparent,
@@ -110,6 +163,7 @@ const OurClients = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+          cursor: pointer;
         }
 
         .client-logo-box {
@@ -122,14 +176,14 @@ const OurClients = () => {
           justify-content: center;
           width: 100%;
           height: 100%;
-          transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+          transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
           cursor: pointer;
         }
 
-        /* INCREASE SIZE ON HOVER */
         .client-logo-box:hover {
-          transform: scale(1.15); /* Adjust this value for more/less zoom */
+          transform: scale(1.15);
           border-color: #0d6efd;
+          box-shadow: 0 10px 25px -5px rgba(13, 110, 253, 0.2);
           z-index: 10;
         }
 
@@ -146,9 +200,34 @@ const OurClients = () => {
           100% { transform: translateX(-50%); }
         }
 
-        /* Optional: Pause while hovering to look at a specific logo */
         .marquee-wrapper:hover .marquee-content {
           animation-play-state: paused;
+        }
+
+        @media (max-width: 768px) {
+          .marquee-item {
+            width: 150px;
+            height: 90px;
+          }
+          
+          .client-logo-box {
+            padding: 15px;
+          }
+          
+          .marquee-content {
+            gap: 25px;
+          }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+          .marquee-item {
+            width: 180px;
+            height: 110px;
+          }
+          
+          .marquee-content {
+            gap: 35px;
+          }
         }
       `}</style>
     </section>
