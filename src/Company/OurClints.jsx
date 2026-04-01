@@ -3,29 +3,35 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import HomeLensImg from "../assets/img/HomeLens.jpg";
 import EliteEdu from "../assets/img/EliteEdu.jpg";
+import Lemnisk from "../assets/img/Lemnisk.png";
+import Emphase from "../assets/img/Emphase.png";
+import Mamamiya from "../assets/img/Mamamiya.png";
+import Some from "../assets/img/Some.svg";
+
+
 
 const CLIENTS = [
   { 
     id: 1, 
-    img: "https://www.lemnisk.co/wp-content/uploads/elementor/thumbs/Lemnisk_New-Logo-rhccjzbuo1mb0hbkby2zxccc23d68igo7o3rlsq66w.png", 
+    img: Lemnisk, 
     name: "Lemnisk", 
     // website: "https://www.lemnisk.co/" 
   },
   { 
     id: 2, 
-    img: "https://www.someshwara.com/images/logo-dark.svg", 
+    img: Some, 
     name: "Someshwara", 
     // website: "https://www.someshwara.com/products/" 
   },
   { 
     id: 3, 
-    img: "https://ephaseglobal.com/wp-content/uploads/2019/09/ephase-logo-1.png", 
+    img: Emphase, 
     name: "Ephase Global", 
     // website: "https://ephaseglobal.com/" 
   },
   { 
     id: 4, 
-    img: "https://mamma-miya.com/wp-content/uploads/2017/11/about_logo.png", 
+    img: Mamamiya, 
     name: "Mamma Miya", 
     // website: "https://mamma-miya.com/" 
   },
